@@ -6,6 +6,10 @@ body {
 }
 img {
   pointer-events: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 span {
   background: url(heart.png);
