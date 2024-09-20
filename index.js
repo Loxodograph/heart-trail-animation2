@@ -13,7 +13,7 @@ body.addEventListener("mousemove", (event) => {
       spanEl.remove();
     }, 3000);
 } )
-
+if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)){
 body.addEventListener("touchmove", (event) => {
   const xPos = event.offsetX;
   const yPos = event.offsetY;
@@ -28,3 +28,4 @@ body.addEventListener("touchmove", (event) => {
     spanEl.remove();
   }, 3000);
 } )
+}
