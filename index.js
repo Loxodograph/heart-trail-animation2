@@ -3,8 +3,7 @@ document.body.addEventListener("touchstart", function(e){ if (e.target.nodeName 
 document.body.addEventListener("touchend", function(e){ if (e.target.nodeName == 'CANVAS') { e.preventDefault(); } }, false);
 document.body.addEventListener("touchmove", function(e){ if (e.target.nodeName == 'CANVAS') { e.preventDefault(); } }, false);
 if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)){
-  body.addEventListener("touchstart", (event) => {
-    console.log(event);
+  body.addEventListener("touchmove", (event) => {
     const xPos = event.pageX;
     const yPos = event.pageY;
     const spanEl = document.createElement("span");
