@@ -3,9 +3,11 @@ document.body.addEventListener("touchstart", function(e){ if (e.target.nodeName 
 document.body.addEventListener("touchend", function(e){ if (e.target.nodeName == 'CANVAS') { e.preventDefault(); } }, false);
 document.body.addEventListener("touchmove", function(e){ if (e.target.nodeName == 'CANVAS') { e.preventDefault(); } }, false);
 if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i)){
-  body.addEventListener("touchmove", (event) => {
-    const xPos = event.pageX;
-    const yPos = event.pageY;
+  body.addEventListener("touchstart", (e) => {
+    console.log(e);
+    body.addEventListener("touchmove", (event => {
+    const xPos = event.touches[0].pageX;
+    const yPos = event.touches[0].pageY;
     const spanEl = document.createElement("span");
     spanEl.style.left = xPos + "px";
     spanEl.style.top = yPos + "px";
@@ -16,8 +18,8 @@ if (navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IE
     setTimeout(() => {
       spanEl.remove();
     }, 3000);
-  }
-  )
+  })
+  )})
   } else {
 body.addEventListener("mousemove", (event) => {
     const xPos = event.offsetX;
